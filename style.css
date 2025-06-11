@@ -10,9 +10,55 @@ body {
   background-color: #ffffff;
   color: #333333;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Zentrierung der Kontaktseite */
+/* Header */
+header {
+  background-color: #f8f8f8;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #007aff;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hauptbereich */
+main.page-content {
+  flex: 1;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+main.page-content section {
+  margin-bottom: 2rem;
+}
+
+/* Footer */
+footer {
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Kontaktseite (übernimmt vorhandene Styles aus vorher) */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -21,13 +67,11 @@ body {
   padding: 1rem;
 }
 
-/* Container für das Formular */
 .form-container {
   width: 100%;
   max-width: 450px;
 }
 
-/* Kontaktformular Layout */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -35,7 +79,6 @@ body {
   width: 100%;
 }
 
-/* Formularelemente */
 .form-group {
   width: 100%;
 }
@@ -60,7 +103,6 @@ body {
   box-shadow: 0 0 5px rgba(0, 122, 255, 0.3);
 }
 
-/* Senden Button */
 .contact-form button {
   display: block;
   width: 100%;
@@ -79,7 +121,6 @@ body {
   background-color: #005ecb;
 }
 
-/* Zurück zur Startseite Button */
 .back-button {
   display: block;
   width: 100%;
@@ -97,12 +138,4 @@ body {
 
 .back-button:hover {
   background-color: #e0e0e0;
-}
-
-/* Überschrift */
-h1 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #111;
 }

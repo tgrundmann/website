@@ -1,72 +1,59 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Grundlegende Formatierungen für die gesamte Seite */
 
 body {
+  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: #fff;
-  color: #111;
-  line-height: 1.6;
-  padding: 2rem;
+  background-color: #ffffff;
+  color: #333333;
 }
+
+/* Zentrierung der Kontaktseite */
 
 .hero {
-  text-align: center;
-  padding: 8rem 2rem;
+  min-height: 100vh; /* vollständige Bildschirmhöhe */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+/* Container für das Formular */
+
+.form-container {
+  width: 100%;
+  max-width: 450px;
 }
 
-.hero p {
-  font-size: 1.5rem;
-  color: #555;
-  margin-bottom: 2rem;
-}
-
-nav a {
-  margin: 0 1rem;
-  text-decoration: none;
-  color: #007aff;
-  font-weight: 500;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
+/* Kontaktformular Layout */
 
 .contact-form {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.form-group {
-  margin-bottom: 1.5rem;
-}
+/* Formularelemente */
 
-.contact-form input,
-.contact-form textarea {
+.form-group input,
+.form-group textarea {
   width: 100%;
   padding: 1rem;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: inherit;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
+.form-group input:focus,
+.form-group textarea:focus {
   border-color: #007aff;
   outline: none;
+  box-shadow: 0 0 5px rgba(0, 122, 255, 0.3);
 }
+
+/* Senden Button */
 
 .contact-form button {
   width: 100%;
@@ -85,6 +72,8 @@ nav a:hover {
   background-color: #005ecb;
 }
 
+/* Zurück zur Startseite Button */
+
 .back-button {
   display: block;
   width: 100%;
@@ -102,4 +91,13 @@ nav a:hover {
 
 .back-button:hover {
   background-color: #e0e0e0;
+}
+
+/* Optional: einheitliches h1 Styling */
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #111;
 }

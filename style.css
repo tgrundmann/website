@@ -1,60 +1,105 @@
-/* Basis-Reset */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: #ffffff;
-  color: #333333;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background-color: #fff;
+  color: #111;
+  line-height: 1.6;
+  padding: 2rem;
 }
 
-/* Header */
-header {
-  background-color: #f8f8f8;
-  padding: 1rem;
+.hero {
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 8rem 2rem;
 }
 
-header h1 {
-  margin-bottom: 0.5rem;
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 2rem;
 }
 
 nav a {
   margin: 0 1rem;
   text-decoration: none;
   color: #007aff;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 nav a:hover {
   text-decoration: underline;
 }
 
-/* Hauptinhalt */
-main.page-content {
-  flex: 1;
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+.contact-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 2rem;
 }
 
-main.page-content section {
-  margin-bottom: 2rem;
-  display: block; /* explizit block für Sicherheit */
+.form-group {
+  margin-bottom: 1.5rem;
 }
 
-/* Footer */
-footer {
-  background-color: #f8f8f8;
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #007aff;
+  outline: none;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #005ecb;
+}
+
+.back-button {
+  display: block;
+  width: 100%;
   text-align: center;
   padding: 1rem;
-  font-size: 0.9rem;
-  color: #666;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #e0e0e0;
 }

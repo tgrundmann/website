@@ -84,3 +84,22 @@ nav a:hover {
 .contact-form button:hover {
   background-color: #005ecb;
 }
+
+.back-button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #e0e0e0;
+}

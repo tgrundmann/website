@@ -227,3 +227,8 @@ footer {
   font-size: 1.5rem;
   cursor: pointer;
 }
+
+.slide ul {
+  list-style: none;
+  padding-left: 0;
+}

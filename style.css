@@ -243,8 +243,9 @@ footer {
 }
 
 .project-toggle {
-  width: 300px; /* feste Breite */
+  min-width: 300px;
   padding: 0.75rem 1.5rem;
+  max-width: 100%;
   font-size: 1rem;
   font-weight: bold;
   border: 1px solid #ddd;
@@ -254,6 +255,7 @@ footer {
   cursor: pointer;
   transition: background-color 0.3s;
   white-space: normal; 
+  box-sizing: border-box;
 }
 
 /* Tablet */

@@ -589,16 +589,11 @@
 
   function closeAllProjectInfos() {
     document.querySelectorAll('.project-info.open').forEach(info => {
-      info.style.height = info.scrollHeight + 'px'; // Startwert
-      info.offsetHeight; // Force reflow
-      info.style.height = '0';
       info.classList.remove('open');
-      // Update aria attributes
-      const toggle = info.previousElementSibling;
-      if(toggle && toggle.classList.contains('project-toggle')){
-        toggle.setAttribute('aria-expanded', 'false');
-      }
+      info.style.height = '0';
       info.setAttribute('aria-hidden', 'true');
+      const toggle = info.previousElementSibling;
+      if(toggle) toggle.setAttribute('aria-expanded', 'false');
     });
   }
 
@@ -616,38 +611,50 @@
     closeAllProjectInfos();
   });
 
-  // Accordion-Logik mit dynamischer Höhe
+  // Accordion-Logik mit Animation-Schutz
   const toggles = document.querySelectorAll('.project-toggle');
 
   toggles.forEach(toggle => {
+    let animating = false; // blockiert Klick während Animation
     toggle.addEventListener('click', () => {
+      if (animating) return; // Klick ignorieren während Animation
+
       const info = toggle.nextElementSibling;
 
       if (info.classList.contains('open')) {
         // schließen
-        info.style.height = info.scrollHeight + 'px'; // aktueller Zustand setzen
-        info.offsetHeight; // Reflow für Übergang erzwingen
+        animating = true;
+        info.style.height = info.scrollHeight + 'px'; // aktuelle Höhe setzen
+        info.offsetHeight; // Reflow für Animation
         info.style.height = '0';
         info.classList.remove('open');
         info.setAttribute('aria-hidden', 'true');
         toggle.setAttribute('aria-expanded', 'false');
+
+        info.addEventListener('transitionend', function handler(e) {
+          if (e.propertyName === 'height') {
+            animating = false;
+            info.removeEventListener('transitionend', handler);
+          }
+        });
       } else {
         // öffnen
+        animating = true;
         info.classList.add('open');
         info.style.height = info.scrollHeight + 'px';
         info.setAttribute('aria-hidden', 'false');
         toggle.setAttribute('aria-expanded', 'true');
 
-        // Nach Animation Höhe auf auto setzen (damit Inhalt dynamisch bleibt)
         info.addEventListener('transitionend', function handler(e) {
           if (e.propertyName === 'height') {
-            info.style.height = 'auto';
+            info.style.height = 'auto'; // Höhe zurücksetzen für flexible Größe
+            animating = false;
             info.removeEventListener('transitionend', handler);
           }
         });
       }
     });
-  });  
-</script>
+  });
+  </script>
 </body>
 </html>

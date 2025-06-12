@@ -223,10 +223,20 @@ footer {
 }
 
 .slider-nav button {
-  margin: 0 1rem;
-  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1.5rem;
   font-size: 1.5rem;
   cursor: pointer;
+  border: none;                 /* Rand entfernen */
+  border-radius: 9999px;        /* rund */
+  background-color: #f0f0f0;    /* grau */
+  color: #007aff;               /* blau */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.slider-nav button:hover {
+  background-color: #e0e0e0;
+  color: #005ecb;
 }
 
 .slide ul {
@@ -244,18 +254,26 @@ footer {
 
 .project-toggle {
   min-width: 300px;
-  padding: 0.75rem 1.5rem;
   max-width: 100%;
+  padding: 0.75rem 1.5rem;
   font-size: 1rem;
   font-weight: bold;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f0f0f0;
-  text-align: center;
+  border: none;                 /* Rand entfernen */
+  border-radius: 9999px;        /* komplett runde Buttons */
+  background-color: #f0f0f0;    /* grauer Hintergrund */
+  color: #007aff;               /* blaue Schrift */
+  text-align: center;           /* Text zentrieren */
   cursor: pointer;
-  transition: background-color 0.3s;
-  white-space: normal; 
+  transition: background-color 0.3s, color 0.3s;
+  white-space: normal;
   box-sizing: border-box;
+  margin: 0.5rem auto;          /* zentriert mit Abstand oben und unten */
+  display: block;
+}
+
+.project-toggle:hover {
+  background-color: #e0e0e0;    /* etwas dunkleres Grau beim Hover */
+  color: #005ecb;               /* dunkleres Blau beim Hover */
 }
 
 /* Tablet */
@@ -267,6 +285,16 @@ footer {
   .project-toggle {
     font-size: 1.1rem;
     padding: 1rem 2rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .project-toggle {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+  }
+  .slider-nav button {
+    padding: 0.6rem 2rem;
   }
 }
 
@@ -283,6 +311,14 @@ footer {
   .project-toggle {
     font-size: 1.2rem;
     padding: 1rem 3rem;
+  }
+
+  .project-toggle {
+    font-size: 1.2rem;
+    padding: 1rem 3rem;
+  }
+  .slider-nav button {
+    padding: 0.7rem 2.5rem;
   }
 }
 

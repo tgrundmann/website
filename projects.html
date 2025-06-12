@@ -185,22 +185,30 @@
   const slides = document.querySelectorAll('.slide');
   let currentSlide = 0;
 
+  function closeAllProjectInfos() {
+    document.querySelectorAll('.project-info.open').forEach(info => {
+      info.classList.remove('open');
+    });
+  }
+
   document.getElementById('next').addEventListener('click', () => {
     slides[currentSlide].classList.remove('active');
     currentSlide = (currentSlide + 1) % slides.length;
     slides[currentSlide].classList.add('active');
+    closeAllProjectInfos();  // <-- hier werden alle geöffneten Details geschlossen
   });
 
   document.getElementById('prev').addEventListener('click', () => {
     slides[currentSlide].classList.remove('active');
     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
     slides[currentSlide].classList.add('active');
+    closeAllProjectInfos();  // <-- hier auch
   });
 
   // Accordion-Logik
   const toggles = document.querySelectorAll('.project-toggle');
 
-   toggles.forEach(toggle => {
+  toggles.forEach(toggle => {
     toggle.addEventListener('click', () => {
       const info = toggle.nextElementSibling;
       info.classList.toggle('open');

@@ -208,13 +208,12 @@ footer {
   color: #333;
   margin-top: 0.75rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  max-height: 0;
+  height: 0;
   opacity: 0;
-  transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+  transition: height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
 }
 
 .project-info.open {
-  max-height: 500px; /* groß genug für den Inhalt */
   opacity: 1;
   padding: 1rem; /* wenn offen, voll sichtbar */
 }

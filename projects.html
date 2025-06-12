@@ -408,63 +408,61 @@
     <p>&copy; 2025 T.-Y. Grundmann. Alle Rechte vorbehalten.</p>
   </footer>
   <script>
-  // Slider-Logik
-const slides = document.querySelectorAll('.slide');
-let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
 
-function closeAllProjectInfos() {
- document.querySelectorAll('.project-info.open').forEach(info => {
-   collapse(info);
- });
-}
+    function closeAllProjectInfos() {
+      document.querySelectorAll('.project-info.open').forEach(info => {
+      collapse(info);
+      });
+    }
 
-document.getElementById('next').addEventListener('click', () => {
- slides[currentSlide].classList.remove('active');
- currentSlide = (currentSlide + 1) % slides.length;
- slides[currentSlide].classList.add('active');
- closeAllProjectInfos();
-});
+    document.getElementById('next').addEventListener('click', () => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+      closeAllProjectInfos();
+    });
 
-document.getElementById('prev').addEventListener('click', () => {
- slides[currentSlide].classList.remove('active');
- currentSlide = (currentSlide - 1 + slides.length) % slides.length;
- slides[currentSlide].classList.add('active');
- closeAllProjectInfos();
-});
+    document.getElementById('prev').addEventListener('click', () => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+      closeAllProjectInfos();
+    });
 
-// Accordion-Logik
-const toggles = document.querySelectorAll('.project-toggle');
+    const toggles = document.querySelectorAll('.project-toggle');
 
-toggles.forEach(toggle => {
- toggle.addEventListener('click', () => {
-   const info = toggle.nextElementSibling;
-   if (info.classList.contains('open')) {
-     collapse(info);
-   } else {
-     expand(info);
-   }
- });
-});
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const info = toggle.nextElementSibling;
+        if (info.classList.contains('open')) {
+          collapse(info);
+        } else {
+          expand(info);
+        }
+      });
+    });
 
-function expand(element) {
- element.classList.add('open');
- element.style.height = 'auto';
- let height = element.scrollHeight + "px";
- element.style.height = '0px';
- requestAnimationFrame(() => {
-   element.style.height = height;
- });
-}
+    function expand(element) {
+      element.classList.add('open');
+      element.style.height = element.scrollHeight + 'px';
+      element.addEventListener('transitionend', function handler() {
+        element.style.height = 'auto'; // nach Animation fixieren
+        element.removeEventListener('transitionend', handler);
+      });
+    }
 
-function collapse(element) {
- element.style.height = element.scrollHeight + 'px';
- requestAnimationFrame(() => {
-   element.style.height = '0px';
- });
- element.addEventListener('transitionend', () => {
-   element.classList.remove('open');
- }, { once: true });
-}
+    function collapse(element) {
+      element.style.height = element.scrollHeight + 'px';
+      requestAnimationFrame(() => {
+        element.style.height = '0px';
+      });
+      element.addEventListener('transitionend', function handler() {
+        element.classList.remove('open');
+        element.removeEventListener('transitionend', handler);
+      });
+    }
 </script>
 </body>
 </html>

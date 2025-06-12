@@ -176,5 +176,32 @@
   <footer class="copyright-footer">
     <p>&copy; 2025 T.-Y. Grundmann. Alle Rechte vorbehalten.</p>
   </footer>
+  <script>
+  // Slider-Logik (wie bisher)
+  const slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+
+  document.getElementById('next').addEventListener('click', () => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  });
+
+  document.getElementById('prev').addEventListener('click', () => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+  });
+
+  // Accordion-Logik
+  const toggles = document.querySelectorAll('.project-toggle');
+
+  toggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const info = toggle.nextElementSibling;
+      info.style.display = info.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+</script>
 </body>
 </html>

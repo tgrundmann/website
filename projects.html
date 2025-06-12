@@ -203,39 +203,271 @@
     <p>&copy; 2025 T.-Y. Grundmann. Alle Rechte vorbehalten.</p>
   </footer>
   <script>
-  // Slider-Logik (wie bisher)
-  const slides = document.querySelectorAll('.slide');
-  let currentSlide = 0;
+  <!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projekte</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section class="hero">
+    <h1>Projekte</h1>
+    <div class="slider-nav">
+        <button id="prev">«</button>
+        <button id="next">»</button>
+    </div>
+    <div class="slide active">
+      <h2>Beratungsprojekte</h2>
+      <ul>
+      <li class="project-item">
+        <button class="project-toggle">PIK-Nachfolgelösung</button>
+        <div class="project-info">
+          <strong>#</strong>Digitalisierung <strong>#</strong>strategische Beratung <strong>#</strong>Projektinitiierung <strong>#</strong>PRINCE2<br>
+          <br>
+          <strong>Branche</strong><br>Öffentlicher Sektor - Asylwesen<br>
+          <br>
+          <strong>Kunde</strong><br>Landesamt für Zuwanderung und Flüchtlinge Schleswig-Holstein<br>
+          <br>
+          <strong>Rolle</strong><br>externer IT-Projektmanager<br>
+          <br>
+          <strong>Ziele</strong><br>Evaluierung möglicher IT-Lösungen als PIK-Nachfolge<br>
+          <br>
+          <strong>Dauer</strong><br>6 Monate<br>
+          <br>
+          <strong>Ergebnisse</strong><br>
+          - Erstellung des Business Cases nach PRINCE2 zur Entscheidungsfindung<br>
+          - strategische Beratung zur Lösungsfindung<br>
+          - Projektinitiierung<br>
+          <br>
+          <strong>IST</strong><br>
+          <br>
+          <strong>Optionen</strong><br>
+          <br>
+          <strong>SOLL</strong><br>
+          <br>
+          <strong>Tools</strong><br>MS Office, DMS VIS (PDV), PAULA GO, DiAS, 
+        </div>
+      </li>
+      <li class="project-item">
+        <button class="project-toggle">Konzepterstellung zur Analyse von Log-Daten</button>
+        <div class="project-info">
+          <p>Details: Konzept für die systematische Auswertung und Visualisierung von Log-Daten.</p>
+          <p><strong>Tech Stack:</strong> Python, SQL, BI-Tools</p>
+        </div>
+      </li>
+      <li class="project-item">
+        <button class="project-toggle">Konzept und Umsetzung BI-Tool für Lackmessungen</button>
+        <div class="project-info">
+          <p>Details: Konzept für die systematische Auswertung und Visualisierung von Log-Daten.</p>
+          <p><strong>Tech Stack:</strong> Python, SQL, BI-Tools</p>
+        </div>
+      </li>
+      <li class="project-item">
+        <button class="project-toggle">Evaluierung von BI-Tools</button>
+        <div class="project-info">
+          <p>Details: Konzept für die systematische Auswertung und Visualisierung von Log-Daten.</p>
+          <p><strong>Tech Stack:</strong> Python, SQL, BI-Tools</p>
+        </div>
+      </li>
+      </ul>
+    </div>
+    <div class="slide">
+        <h2>Einführungsprojekte</h2>
+        <ul>
+        <li class="project-item">
+          <button class="project-toggle">Einführung der eAusländerakte</button>
+          <div class="project-info">
+            <p>Details: Analyse und Bewertung der bestehenden PIK-Lösung für die spätere Nachfolgeplanung.</p>
+            <p><strong>Tech Stack:</strong> Excel, Interviews, Dokumentenanalyse</p>
+          </div>
+        </li>
+        <li class="project-item">
+          <button class="project-toggle">Einführung von PAULA SH als PIK-Nachfolgelösung</button>
+          <div class="project-info">
+            <p>Details: Konzept für die systematische Auswertung und Visualisierung von Log-Daten.</p>
+            <p><strong>Tech Stack:</strong> Python, SQL, BI-Tools</p>
+          </div>
+        </li>
+        <li class="project-item">
+          <button class="project-toggle">Rollout von samedi</button>
+          <div class="project-info">
+            <p>Details: Konzept für die systematische Auswertung und Visualisierung von Log-Daten.</p>
+            <p><strong>Tech Stack:</strong> Python, SQL, BI-Tools</p>
+          </div>
+        </li>
+        <li class="project-item">
+          <button class="project-toggle">Einführung der SAC</button>
+          <div class="project-info">
+            <p>Details: Konzept für die systematische Auswertung und Visualisierung von Log-Daten.</p>
+            <p><strong>Tech Stack:</strong> Python, SQL, BI-Tools</p>
+          </div>
+        </li>
+        </ul>
+      </div>
+      <div class="slide">
+        <h2>Forschungs- und Entwicklungsprojekte</h2>
+        <ul>
+        <li class="project-item">
+          <button class="project-toggle">Softwareentwicklung Blockchain</button>
+          <div class="project-info">
+            <p>Details: Analyse und Bewertung der bestehenden PIK-Lösung für die spätere Nachfolgeplanung.</p>
+            <p><strong>Tech Stack:</strong> Excel, Interviews, Dokumentenanalyse</p>
+          </div>
+        </li>
+        <li class="project-item">
+          <button class="project-toggle">Warenkorbanalyse</button>
+          <div class="project-info">
+            <p>Details: Konzept für die systematische Auswertung und Visualisierung von Log-Daten.</p>
+            <p><strong>Tech Stack:</strong> Python, SQL, BI-Tools</p>
+          </div>
+        </li>
+        <li class="project-item">
+          <button class="project-toggle">Datenanalyse (HVV, Campana, US-Wahl)</button>
+          <div class="project-info">
+            <p>Details: Konzept für die systematische Auswertung und Visualisierung von Log-Daten.</p>
+            <p><strong>Tech Stack:</strong> Python, SQL, BI-Tools</p>
+          </div>
+        </li>
+        <li class="project-item">
+          <button class="project-toggle">Stauplanung</button>
+          <div class="project-info">
+            <p>Details: Konzept für die systematische Auswertung und Visualisierung von Log-Daten.</p>
+            <p><strong>Tech Stack:</strong> Python, SQL, BI-Tools</p>
+          </div>
+        </li>
+        <li class="project-item">
+          <button class="project-toggle">Digitaler Zwilling - process Mining</button>
+          <div class="project-info">
+            <p>Details: Konzept für die systematische Auswertung und Visualisierung von Log-Daten.</p>
+            <p><strong>Tech Stack:</strong> Python, SQL, BI-Tools</p>
+          </div>
+        </li>
+        <li class="project-item">
+          <button class="project-toggle">Überfühurng Reporting Dashboardentwicklung SAC</button>
+          <div class="project-info">
+            <p>Details: Konzept für die systematische Auswertung und Visualisierung von Log-Daten.</p>
+            <p><strong>Tech Stack:</strong> Python, SQL, BI-Tools</p>
+          </div>
+        </li>
+        <li class="project-item">
+          <button class="project-toggle">Datenmodell zur Analyse von CRM-Daten</button>
+          <div class="project-info">
+            <p>Details: Konzept für die systematische Auswertung und Visualisierung von Log-Daten.</p>
+            <p><strong>Tech Stack:</strong> Python, SQL, BI-Tools</p>
+          </div>
+        </li>
+        <li class="project-item">
+          <button class="project-toggle">RealTimeAdvertising</button>
+          <div class="project-info">
+            <p>Details: Konzept für die systematische Auswertung und Visualisierung von Log-Daten.</p>
+            <p><strong>Tech Stack:</strong> Python, SQL, BI-Tools</p>
+          </div>
+        </li>
+        <li class="project-item">
+          <button class="project-toggle">Softwareentwicklung Phoenix</button>
+          <div class="project-info">
+            <p>Details: Konzept für die systematische Auswertung und Visualisierung von Log-Daten.</p>
+            <p><strong>Tech Stack:</strong> Python, SQL, BI-Tools</p>
+          </div>
+        </li>
+        </ul>
+      </div>
+      <div class="slide">
+        <h2>Wartungs- und Weiterentwicklungsprojekte</h2>
+        <ul>
+        <li class="project-item">
+          <button class="project-toggle">Softwaresupport von t/surplus (R)</button>
+          <div class="project-info">
+            <p>Details: Analyse und Bewertung der bestehenden PIK-Lösung für die spätere Nachfolgeplanung.</p>
+            <p><strong>Tech Stack:</strong> Excel, Interviews, Dokumentenanalyse</p>
+          </div>
+        </li>
+        <li class="project-item">
+          <button class="project-toggle">Softwareweiterentwicklung von GLOBE (JAVA)</button>
+          <div class="project-info">
+            <p>Details: Konzept für die systematische Auswertung und Visualisierung von Log-Daten.</p>
+            <p><strong>Tech Stack:</strong> Python, SQL, BI-Tools</p>
+          </div>
+        </li>
+        <li class="project-item">
+          <button class="project-toggle">Softwaresupport und -weiterentwicklng von transPORT rail (JAVA)</button>
+          <div class="project-info">
+            <p>Details: Konzept für die systematische Auswertung und Visualisierung von Log-Daten.</p>
+            <p><strong>Tech Stack:</strong> Python, SQL, BI-Tools</p>
+          </div>
+        </li>
+        </ul>
+      </div>
+    <nav>
+      <a href="index.html">zurück</a>
+    </nav>
+  </section>
+  <footer class="copyright-footer">
+    <p>&copy; 2025 T.-Y. Grundmann. Alle Rechte vorbehalten.</p>
+  </footer>
+  <script>
+  // Slider-Logik
+const slides = document.querySelectorAll('.slide');
+let currentSlide = 0;
 
-  function closeAllProjectInfos() {
-    document.querySelectorAll('.project-info.open').forEach(info => {
-      info.classList.remove('open');
-    });
-  }
+function closeAllProjectInfos() {
+ document.querySelectorAll('.project-info.open').forEach(info => {
+   collapse(info);
+ });
+}
 
-  document.getElementById('next').addEventListener('click', () => {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add('active');
-    closeAllProjectInfos();  // <-- hier werden alle geöffneten Details geschlossen
-  });
+document.getElementById('next').addEventListener('click', () => {
+ slides[currentSlide].classList.remove('active');
+ currentSlide = (currentSlide + 1) % slides.length;
+ slides[currentSlide].classList.add('active');
+ closeAllProjectInfos();
+});
 
-  document.getElementById('prev').addEventListener('click', () => {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    slides[currentSlide].classList.add('active');
-    closeAllProjectInfos();  // <-- hier auch
-  });
+document.getElementById('prev').addEventListener('click', () => {
+ slides[currentSlide].classList.remove('active');
+ currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+ slides[currentSlide].classList.add('active');
+ closeAllProjectInfos();
+});
 
-  // Accordion-Logik
-  const toggles = document.querySelectorAll('.project-toggle');
+// Accordion-Logik
+const toggles = document.querySelectorAll('.project-toggle');
 
-  toggles.forEach(toggle => {
-    toggle.addEventListener('click', () => {
-      const info = toggle.nextElementSibling;
-      info.classList.toggle('open');
-    });
-  });
+toggles.forEach(toggle => {
+ toggle.addEventListener('click', () => {
+   const info = toggle.nextElementSibling;
+   if (info.classList.contains('open')) {
+     collapse(info);
+   } else {
+     expand(info);
+   }
+ });
+});
+
+function expand(element) {
+ element.classList.add('open');
+ element.style.height = 'auto';
+ let height = element.scrollHeight + "px";
+ element.style.height = '0px';
+ requestAnimationFrame(() => {
+   element.style.height = height;
+ });
+}
+
+function collapse(element) {
+ element.style.height = element.scrollHeight + 'px';
+ requestAnimationFrame(() => {
+   element.style.height = '0px';
+ });
+ element.addEventListener('transitionend', () => {
+   element.classList.remove('open');
+ }, { once: true });
+}
+</script>
+</body>
+</html>
 </script>
 </body>
 </html>

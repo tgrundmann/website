@@ -200,10 +200,10 @@
   // Accordion-Logik
   const toggles = document.querySelectorAll('.project-toggle');
 
-  toggles.forEach(toggle => {
+   toggles.forEach(toggle => {
     toggle.addEventListener('click', () => {
       const info = toggle.nextElementSibling;
-      info.style.display = info.style.display === 'block' ? 'none' : 'block';
+      info.classList.toggle('open');
     });
   });
 </script>

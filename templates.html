@@ -15,56 +15,55 @@
 <body>
   <section class="hero">
     <h1>Vorlagen</h1>
+
+    <!-- VORLAGE 1 -->
     <h2>Vorlage 1: Test-Template</h2>
     <p>Ein kurzer Einblick in den Inhalt – klick dich durch die Slides!</p>
 
-    <!-- SLIDER -->
-    <div id="slider1">
-      <div class="slide active">
-        <img src="bilder/slide4.jpg" alt="Einblick 4" style="max-width:100%; border-radius: 12px;">
+    <div class="slider-container">
+      <div class="slider">
+        <div class="slide active">
+          <img src="bilder/slide4.jpg" alt="Einblick 4" style="max-width:100%; border-radius: 12px;">
+        </div>
+        <div class="slide">
+          <img src="bilder/slide5.jpg" alt="Einblick 5" style="max-width:100%; border-radius: 12px;">
+        </div>
+        <div class="slide">
+          <img src="bilder/slide6.jpg" alt="Einblick 6" style="max-width:100%; border-radius: 12px;">
+        </div>
       </div>
-      <div class="slide">
-        <img src="bilder/slide5.jpg" alt="Einblick 5" style="max-width:100%; border-radius: 12px;">
-      </div>
-      <div class="slide">
-        <img src="bilder/slide6.jpg" alt="Einblick 6" style="max-width:100%; border-radius: 12px;">
+      <div class="slider-nav">
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
       </div>
     </div>
 
-    <!-- SLIDER-NAVIGATION -->
-    <div class="slider-nav">
-      <button onclick="prevSlide()">❮</button>
-      <button onclick="nextSlide()">❯</button>
-    </div>
-
-    <!-- PAYHIP BUTTON -->
     <div style="margin: 2rem 0;">
       <a href="https://payhip.com/b/Hrzhg" target="_blank" class="project-toggle">Jetzt kaufen auf Payhip</a>
     </div>
-  
+
+    <!-- VORLAGE 2 -->
     <h2>Vorlage 2: Test-Template 2</h2>
     <p>Ein kurzer Einblick in den Inhalt – klick dich durch die Slides!</p>
 
-    <!-- SLIDER -->
-    <div id="slider2">
-      <div class="slide active">
-        <img src="bilder/slide1.jpg" alt="Einblick 1" style="max-width:100%; border-radius: 12px;">
+    <div class="slider-container">
+      <div class="slider">
+        <div class="slide active">
+          <img src="bilder/slide1.jpg" alt="Einblick 1" style="max-width:100%; border-radius: 12px;">
+        </div>
+        <div class="slide">
+          <img src="bilder/slide2.jpg" alt="Einblick 2" style="max-width:100%; border-radius: 12px;">
+        </div>
+        <div class="slide">
+          <img src="bilder/slide3.jpg" alt="Einblick 3" style="max-width:100%; border-radius: 12px;">
+        </div>
       </div>
-      <div class="slide">
-        <img src="bilder/slide2.jpg" alt="Einblick 2" style="max-width:100%; border-radius: 12px;">
-      </div>
-      <div class="slide">
-        <img src="bilder/slide3.jpg" alt="Einblick 3" style="max-width:100%; border-radius: 12px;">
+      <div class="slider-nav">
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
       </div>
     </div>
 
-    <!-- SLIDER-NAVIGATION -->
-    <div class="slider-nav">
-      <button onclick="prevSlide()">❮</button>
-      <button onclick="nextSlide()">❯</button>
-    </div>
-
-    <!-- PAYHIP BUTTON -->
     <div style="margin: 2rem 0;">
       <a href="https://payhip.com/b/Hrzhg" target="_blank" class="project-toggle">Jetzt kaufen auf Payhip</a>
     </div>
@@ -87,26 +86,40 @@
     <p>&copy; 2025 T.-Y. Grundmann. Alle Rechte vorbehalten.</p>
   </footer>
 
+
   <!-- SLIDER-SKRIPT -->
   <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
+    // Alle Slider-Container durchlaufen
+    document.querySelectorAll('.slider-container').forEach(container => {
+      const slides = container.querySelectorAll('.slide');
+      const prevBtn = container.querySelector('.prev');
+      const nextBtn = container.querySelector('.next');
+      let currentIndex = 0;
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
-    }
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+      }
 
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      }
 
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
-    }
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+      }
+
+      nextBtn.addEventListener('click', nextSlide);
+      prevBtn.addEventListener('click', prevSlide);
+
+      // Autoplay alle 5 Sekunden
+      setInterval(() => {
+        nextSlide();
+      }, 5000);
+    });
   </script>
 </body>
 </html>

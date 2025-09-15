@@ -21,16 +21,10 @@
     <p>Ein kurzer Einblick in den Inhalt!</p>
 
     <div class="slider-container">
-      <div class="slider">
-        <div class="slide active">
-          <img src="slide1.jpg" alt="Einblick 1" style="max-width:100%; border-radius: 12px;">
-        </div>
-        <div class="slide">
-          <img src="slide2.jpg" alt="Einblick 2" style="max-width:100%; border-radius: 12px;">
-        </div>
-        <div class="slide">
-          <img src="slide3.jpg" alt="Einblick 3" style="max-width:100%; border-radius: 12px;">
-        </div>
+      <div class="slider-track">
+        <div class="slide"><img src="slide1.jpg" alt="Einblick 1" style="max-width:100%; border-radius: 12px;"></div>
+        <div class="slide"><img src="slide2.jpg" alt="Einblick 2" style="max-width:100%; border-radius: 12px;"></div>
+        <div class="slide"><img src="slide3.jpg" alt="Einblick 3" style="max-width:100%; border-radius: 12px;"></div>
       </div>
       <div class="slider-nav">
         <button class="prev">❮</button>
@@ -47,16 +41,10 @@
     <p>Ein kurzer Einblick in den Inhalt!</p>
 
     <div class="slider-container">
-      <div class="slider">
-        <div class="slide active">
-          <img src="slide2.jpg" alt="Einblick 1" style="max-width:100%; border-radius: 12px;">
-        </div>
-        <div class="slide">
-          <img src="slide3.jpg" alt="Einblick 2" style="max-width:100%; border-radius: 12px;">
-        </div>
-        <div class="slide">
-          <img src="slide1.jpg" alt="Einblick 3" style="max-width:100%; border-radius: 12px;">
-        </div>
+      <div class="slider-track">
+        <div class="slide"><img src="slide2.jpg" alt="Einblick 1" style="max-width:100%; border-radius: 12px;"></div>
+        <div class="slide"><img src="slide3.jpg" alt="Einblick 2" style="max-width:100%; border-radius: 12px;"></div>
+        <div class="slide"><img src="slide1.jpg" alt="Einblick 3" style="max-width:100%; border-radius: 12px;"></div>
       </div>
       <div class="slider-nav">
         <button class="prev">❮</button>
@@ -86,40 +74,37 @@
     <p>&copy; 2025 T.-Y. Grundmann. Alle Rechte vorbehalten.</p>
   </footer>
 
-
   <!-- SLIDER-SKRIPT -->
   <script>
-    // Alle Slider-Container durchlaufen
-    document.querySelectorAll('.slider-container').forEach(container => {
-      const slides = container.querySelectorAll('.slide');
-      const prevBtn = container.querySelector('.prev');
-      const nextBtn = container.querySelector('.next');
-      let currentIndex = 0;
+  document.querySelectorAll('.slider-container').forEach(container => {
+    const track = container.querySelector('.slider-track');
+    const slides = container.querySelectorAll('.slide');
+    const prevBtn = container.querySelector('.prev');
+    const nextBtn = container.querySelector('.next');
+    let currentIndex = 0;
 
-      function showSlide(index) {
-        slides.forEach((slide, i) => {
-          slide.classList.toggle('active', i === index);
-        });
-      }
+    function updateSliderPosition() {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
 
-      function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        showSlide(currentIndex);
-      }
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateSliderPosition();
+    }
 
-      function prevSlide() {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        showSlide(currentIndex);
-      }
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateSliderPosition();
+    }
 
-      nextBtn.addEventListener('click', nextSlide);
-      prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
 
-      // Autoplay alle 5 Sekunden
-      setInterval(() => {
-        nextSlide();
-      }, 5000);
-    });
-  </script>
+    // Autoplay alle 5 Sekunden
+    setInterval(() => {
+      nextSlide();
+    }, 5000);
+  });
+</script>
 </body>
 </html>

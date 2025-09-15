@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VORLAGEN</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+  <section class="hero">
+    <h1>Vorlage 1: Test-Template</h1>
+    <p>Ein kurzer Einblick in den Inhalt – klick dich durch die Slides!</p>
 
+    <!-- SLIDER -->
+    <div id="slider">
+      <div class="slide active">
+        <img src="bilder/slide1.jpg" alt="Einblick 1" style="max-width:100%; border-radius: 12px;">
+      </div>
+      <div class="slide">
+        <img src="bilder/slide2.jpg" alt="Einblick 2" style="max-width:100%; border-radius: 12px;">
+      </div>
+      <div class="slide">
+        <img src="bilder/slide3.jpg" alt="Einblick 3" style="max-width:100%; border-radius: 12px;">
+      </div>
+    </div>
+
+    <!-- SLIDER-NAVIGATION -->
+    <div class="slider-nav">
+      <button onclick="prevSlide()">❮</button>
+      <button onclick="nextSlide()">❯</button>
+    </div>
+
+    <!-- PAYHIP BUTTON -->
+    <div style="margin: 2rem 0;">
+      <a href="https://payhip.com/b/Hrzhg" target="_blank" class="project-toggle">Jetzt kaufen auf Payhip</a>
+    </div>
+
+    <!-- ZURÜCK BUTTON -->
+    <a href="index.html" class="back-button">zurück</a>
+  </section>
+
+  <footer class="social-links">
+    <a href="https://www.xing.to/Tim-Yannick_Grundmann" target="_blank" rel="noopener noreferrer" aria-label="Xing Profil">
+      <i class="fab fa-xing"></i> Xing
+    </a>
+    <a href="https://www.linkedin.com/in/t-grundmann" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profil">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+  </footer>
+  <footer class="copyright-footer">
+    <p>&copy; 2025 T.-Y. Grundmann. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <!-- SLIDER-SKRIPT -->
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+  </script>
+</body>
+</html>

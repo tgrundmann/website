@@ -330,9 +330,9 @@ footer {
 .projekt-slider-track .slide {
   flex: 0 0 100%;
   box-sizing: border-box;
-  padding: 1rem;
-  max-width: 100%; /* verhindert Überbreite */
-  width: 100%;     /* voll ausnutzen */
+  padding: 0; /* Padding entfernt */
+  max-width: 100%;
+  width: 100%;
 }
 
 /* Basis-Styles gelten für mobile */

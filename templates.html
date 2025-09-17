@@ -83,13 +83,16 @@
   </footer>
 
   <!-- SLIDER-SKRIPT -->
-  <script>
+   <script>
   document.querySelectorAll('.slider-container').forEach(container => {
+  (function(container) {
     const track = container.querySelector('.slider-track');
     const slides = container.querySelectorAll('.slide');
     const prevBtn = container.querySelector('.prev');
     const nextBtn = container.querySelector('.next');
     let currentIndex = 0;
+
+    track.style.width = `${slides.length * 100}%`;
 
     function updateSliderPosition() {
       track.style.transform = `translateX(-${currentIndex * 100}%)`;
@@ -108,11 +111,11 @@
     nextBtn.addEventListener('click', nextSlide);
     prevBtn.addEventListener('click', prevSlide);
 
-    // Autoplay alle 3 Sekunden
     setInterval(() => {
       nextSlide();
     }, 3000);
-  });
+  })(container);
+});
 
   const track = document.querySelector('.vorlagen-slider-track');
   const slides = document.querySelectorAll('.vorlagen-slide');

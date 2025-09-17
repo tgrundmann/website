@@ -15,46 +15,55 @@
 <body>
   <section class="hero">
     <h1>Vorlagen</h1>
-
-    <!-- VORLAGE 1 -->
-    <h2>Vorlage 1: Test-Template</h2>
-    <p>Ein kurzer Einblick in den Inhalt!</p>
-
-    <div class="slider-container">
-      <div class="slider-track">
-        <div class="slide"><img src="slide1.jpg" alt="Einblick 1" style="max-width:100%; border-radius: 12px;"></div>
-        <div class="slide"><img src="slide2.jpg" alt="Einblick 2" style="max-width:100%; border-radius: 12px;"></div>
-        <div class="slide"><img src="slide3.jpg" alt="Einblick 3" style="max-width:100%; border-radius: 12px;"></div>
+    
+    <div class="vorlagen-slider-container">
+      
+    <div class="vorlagen-slider-track">
+      <!-- VORLAGE 1 -->
+      <div class="vorlagen-slide">
+        <h2>Vorlage 1: Test-Template</h2>
+        <p>Ein kurzer Einblick in den Inhalt!</p>
+        <!-- Bilder-Slider bleibt wie gehabt -->
+        <div class="slider-container">
+          <div class="slider-track">
+            <div class="slide"><img src="slide1.jpg" alt="Einblick 1" style="max-width:100%; border-radius: 12px;"></div>
+            <div class="slide"><img src="slide2.jpg" alt="Einblick 2" style="max-width:100%; border-radius: 12px;"></div>
+            <div class="slide"><img src="slide3.jpg" alt="Einblick 3" style="max-width:100%; border-radius: 12px;"></div>
+          </div>
+          <div class="slider-nav">
+            <button class="prev">❮</button>
+            <button class="next">❯</button>
+          </div>
+        </div>
+        <a href="https://payhip.com/b/Hrzhg" target="_blank" class="project-toggle">Jetzt kaufen</a>
       </div>
-      <div class="slider-nav">
-        <button class="prev">❮</button>
-        <button class="next">❯</button>
+  
+      <!-- VORLAGE 2 -->
+      <div class="vorlagen-slide">
+        <h2>Vorlage 2: Test-Template 2</h2>
+        <p>Ein kurzer Einblick in den Inhalt!</p>
+        <div class="slider-container">
+          <div class="slider-track">
+            <div class="slide"><img src="slide2.jpg" alt="Einblick 1" style="max-width:100%; border-radius: 12px;"></div>
+            <div class="slide"><img src="slide3.jpg" alt="Einblick 2" style="max-width:100%; border-radius: 12px;"></div>
+            <div class="slide"><img src="slide1.jpg" alt="Einblick 3" style="max-width:100%; border-radius: 12px;"></div>
+          </div>
+          <div class="slider-nav">
+            <button class="prev">❮</button>
+            <button class="next">❯</button>
+          </div>
+        </div>
+        <a href="https://payhip.com/b/Hrzhg" target="_blank" class="project-toggle">Jetzt kaufen</a>
       </div>
     </div>
-
-    <div style="margin: 2rem 0;">
-      <a href="https://payhip.com/b/Hrzhg" target="_blank" class="project-toggle">Jetzt kaufen</a>
+  
+    <!-- Navigation zwischen Vorlagen -->
+    <div class="vorlagen-nav">
+      <button id="vorlage-prev">❮</button>
+      <button id="vorlage-next">❯</button>
     </div>
+  </div>
 
-    <!-- VORLAGE 2 -->
-    <h2>Vorlage 2: Test-Template 2</h2>
-    <p>Ein kurzer Einblick in den Inhalt!</p>
-
-    <div class="slider-container">
-      <div class="slider-track">
-        <div class="slide"><img src="slide2.jpg" alt="Einblick 1" style="max-width:100%; border-radius: 12px;"></div>
-        <div class="slide"><img src="slide3.jpg" alt="Einblick 2" style="max-width:100%; border-radius: 12px;"></div>
-        <div class="slide"><img src="slide1.jpg" alt="Einblick 3" style="max-width:100%; border-radius: 12px;"></div>
-      </div>
-      <div class="slider-nav">
-        <button class="prev">❮</button>
-        <button class="next">❯</button>
-      </div>
-    </div>
-
-    <div style="margin: 2rem 0;">
-      <a href="https://payhip.com/b/Hrzhg" target="_blank" class="project-toggle">Jetzt kaufen</a>
-    </div>
   </section>
 
   <footer>
@@ -104,6 +113,26 @@
     setInterval(() => {
       nextSlide();
     }, 3000);
+  });
+
+  const track = document.querySelector('.vorlagen-slider-track');
+  const slides = document.querySelectorAll('.vorlagen-slide');
+  const nextBtn = document.getElementById('vorlage-next');
+  const prevBtn = document.getElementById('vorlage-prev');
+  let currentIndex = 0;
+
+  function updateSlidePosition() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlidePosition();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlidePosition();
   });
 </script>
 </body>

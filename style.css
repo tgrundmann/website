@@ -221,7 +221,7 @@ footer {
 .slide {
   width: 100%;
   flex-shrink: 0;
-  heigth: 100%;
+  height: 100%;
 }
 
 .slide.active {
@@ -290,30 +290,25 @@ footer {
 .vorlagen-slider-track {
   display: flex;
   transition: transform 0.6s ease;
-  width: 200%; /* Bei 2 Vorlagen – bei 3: 300%, etc. */
+  width: 100%;
 }
 
 .vorlagen-slide {
   flex: 0 0 100%;
-  padding: 2rem;
+  max-width: 100%;
   box-sizing: border-box;
+  padding: 2rem;
 }
 
 .vorlagen-nav {
   text-align: center;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
 .vorlagen-nav button {
-  padding: 0.5rem 1.5rem;
-  font-size: 1rem;
-  background-color: #007aff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  margin: 0 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  margin: 0 1rem;
 }
 
 .vorlagen-nav button:hover {

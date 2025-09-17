@@ -13,16 +13,22 @@
   />
 </head>
 <body>
-  <section class="hero">
-    <h1>Projekte</h1>
-    <div class="slider-nav">
-        <button id="prev">❮</button>
-        <button id="next">❯</button>
-    </div>
-    <div class="slide active">
-      <h2>Beratungsprojekte</h2>
-      <ul>
-      <li class="project-item">
+	<section class="hero">
+    	<h1>Projekte</h1>
+	    <!-- Navigation zwischen Vorlagen -->
+	    <div class="slider-nav">
+        	<button id="prev">❮</button>
+        	<button id="next">❯</button>
+   	 	</div>
+
+		<!-- NEU: Container für den gesamten Slider -->
+		<div class="projekt-slider-container">
+ 	 	<div class="projekt-slider-track">
+	 	<!-- Projekt 1 -->
+    	<div class="slide active">
+      		<h2>Beratungsprojekte</h2>
+      	<ul>
+      	<li class="project-item">
         <button class="project-toggle">Evaluierung von PIK-Nachfolgelösungen</button>
         <div class="project-info">
           <strong>Branche</strong><br>
@@ -987,6 +993,7 @@
         </li>
         </ul>
       </div>
+	</div>
   </section>
   <footer>
     <nav>

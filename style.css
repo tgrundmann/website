@@ -280,6 +280,46 @@ footer {
   border-radius: 12px;
 }
 
+.vorlagen-slider-container {
+  overflow: hidden;
+  max-width: 900px;
+  margin: 3rem auto;
+  position: relative;
+}
+
+.vorlagen-slider-track {
+  display: flex;
+  transition: transform 0.6s ease;
+  width: 200%; /* Bei 2 Vorlagen – bei 3: 300%, etc. */
+}
+
+.vorlagen-slide {
+  flex: 0 0 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.vorlagen-nav {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.vorlagen-nav button {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.vorlagen-nav button:hover {
+  background-color: #005ecb;
+}
+
 /* Basis-Styles gelten für mobile */
 
 .project-item {

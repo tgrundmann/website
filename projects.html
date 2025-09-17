@@ -1013,68 +1013,98 @@
   </footer>
 	
   <script>
-  const track = document.querySelector('.projekt-slider-track');
-  const slides = document.querySelectorAll('.projekt-slider-track .slide');
-  const nextBtn = document.getElementById('next');
-  const prevBtn = document.getElementById('prev');
-  let currentIndex = 0;
 
-  function updateSlidePosition() {
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-  }
+const track = document.querySelector('.projekt-slider-track');
+const slides = document.querySelectorAll('.projekt-slider-track .slide');
+const nextBtn = document.getElementById('next');
+const prevBtn = document.getElementById('prev');
+let currentIndex = 0;
 
-  nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % slides.length;
-    updateSlidePosition();
-  });
+function updateSlidePosition() {
+  track.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
 
-  prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    updateSlidePosition();
-  });
+// Funktion, um alle offenen Projektinfos zu schließen mit Animation
+function closeAllProjectInfos() {
+  const openInfos = document.querySelectorAll('.project-info.open');
+  openInfos.forEach(info => {
+    info.style.height = info.scrollHeight + 'px'; // aktuelle Höhe setzen für Animation
+    info.offsetHeight; // reflow erzwingen
+    info.style.height = '0';
+    info.classList.remove('open');
+    info.setAttribute('aria-hidden', 'true');
 
-  // Optional: Accordion-Logik beibehalten
-  const toggles = document.querySelectorAll('.project-toggle');
+    // Toggle Button zu 'geschlossen' setzen
+    const toggle = info.previousElementSibling;
+    if (toggle && toggle.classList.contains('project-toggle')) {
+      toggle.setAttribute('aria-expanded', 'false');
+    }
 
-  toggles.forEach(toggle => {
-    let animating = false;
-    toggle.addEventListener('click', () => {
-      if (animating) return;
-
-      const info = toggle.nextElementSibling;
-
-      if (info.classList.contains('open')) {
-        animating = true;
-        info.style.height = info.scrollHeight + 'px';
-        info.offsetHeight;
+    // Nach Animation Höhe zurücksetzen
+    info.addEventListener('transitionend', function handler(e) {
+      if (e.propertyName === 'height') {
         info.style.height = '0';
-        info.classList.remove('open');
-        info.setAttribute('aria-hidden', 'true');
-        toggle.setAttribute('aria-expanded', 'false');
-
-        info.addEventListener('transitionend', function handler(e) {
-          if (e.propertyName === 'height') {
-            animating = false;
-            info.removeEventListener('transitionend', handler);
-          }
-        });
-      } else {
-        animating = true;
-        info.classList.add('open');
-        info.style.height = info.scrollHeight + 'px';
-        info.setAttribute('aria-hidden', 'false');
-        toggle.setAttribute('aria-expanded', 'true');
-
-        info.addEventListener('transitionend', function handler(e) {
-          if (e.propertyName === 'height') {
-            info.style.height = 'auto';
-            animating = false;
-            info.removeEventListener('transitionend', handler);
-          }
-        });
+        info.removeEventListener('transitionend', handler);
       }
     });
   });
+}
+
+nextBtn.addEventListener('click', () => {
+  closeAllProjectInfos(); // alle schließen vor Slide-Wechsel
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateSlidePosition();
+});
+
+prevBtn.addEventListener('click', () => {
+  closeAllProjectInfos(); // alle schließen vor Slide-Wechsel
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  updateSlidePosition();
+});
+
+// Accordion-Logik beibehalten
+const toggles = document.querySelectorAll('.project-toggle');
+
+toggles.forEach(toggle => {
+  let animating = false;
+  toggle.addEventListener('click', () => {
+    if (animating) return;
+
+    const info = toggle.nextElementSibling;
+
+    if (info.classList.contains('open')) {
+      animating = true;
+      info.style.height = info.scrollHeight + 'px';
+      info.offsetHeight;
+      info.style.height = '0';
+      info.classList.remove('open');
+      info.setAttribute('aria-hidden', 'true');
+      toggle.setAttribute('aria-expanded', 'false');
+
+      info.addEventListener('transitionend', function handler(e) {
+        if (e.propertyName === 'height') {
+          animating = false;
+          info.removeEventListener('transitionend', handler);
+        }
+      });
+    } else {
+      animating = true;
+      info.classList.add('open');
+      info.style.height = info.scrollHeight + 'px';
+      info.setAttribute('aria-hidden', 'false');
+      toggle.setAttribute('aria-expanded', 'true');
+
+      info.addEventListener('transitionend', function handler(e) {
+        if (e.propertyName === 'height') {
+          info.style.height = 'auto';
+          animating = false;
+          info.removeEventListener('transitionend', handler);
+        }
+      });
+    }
+  });
+});
+	  
 </script>
 </body>
 </html>

@@ -312,6 +312,26 @@ footer {
   background-color: #005ecb;
 }
 
+.projekt-slider-container {
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 0 auto 2rem auto;
+  position: relative;
+}
+
+.projekt-slider-track {
+  display: flex;
+  transition: transform 0.6s ease;
+  width: 400%; /* 4 Slides = 400% */
+}
+
+.projekt-slider-track .slide {
+  flex: 0 0 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 2rem 1rem;
+}
+
 /* Basis-Styles gelten für mobile */
 
 .project-item {

@@ -315,21 +315,24 @@ footer {
 .projekt-slider-container {
   overflow: hidden;
   max-width: 1000px;
-  margin: 0 auto 2rem auto;
+  margin: 2rem auto;
   position: relative;
+  padding: 1rem; /* optional: sorgt für etwas Innenabstand */
+  width: 100%;   /* wichtig für Responsive */
 }
 
 .projekt-slider-track {
   display: flex;
   transition: transform 0.6s ease;
-  width: 400%; /* 4 Slides = 400% */
+  width: 100%;
 }
 
 .projekt-slider-track .slide {
   flex: 0 0 100%;
-  max-width: 100%;
   box-sizing: border-box;
-  padding: 2rem 1rem;
+  padding: 1rem;
+  max-width: 100%; /* verhindert Überbreite */
+  width: 100%;     /* voll ausnutzen */
 }
 
 /* Basis-Styles gelten für mobile */

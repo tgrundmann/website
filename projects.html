@@ -1011,50 +1011,42 @@
   <footer class="copyright-footer">
     <p>&copy; 2025 T.-Y. Grundmann. Alle Rechte vorbehalten.</p>
   </footer>
+	
   <script>
-  // Slider-Logik (wie bisher)
-  const slides = document.querySelectorAll('.slide');
-  let currentSlide = 0;
+  const track = document.querySelector('.projekt-slider-track');
+  const slides = document.querySelectorAll('.projekt-slider-track .slide');
+  const nextBtn = document.getElementById('next');
+  const prevBtn = document.getElementById('prev');
+  let currentIndex = 0;
 
-  function closeAllProjectInfos() {
-    document.querySelectorAll('.project-info.open').forEach(info => {
-      info.classList.remove('open');
-      info.style.height = '0';
-      info.setAttribute('aria-hidden', 'true');
-      const toggle = info.previousElementSibling;
-      if(toggle) toggle.setAttribute('aria-expanded', 'false');
-    });
+  function updateSlidePosition() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
   }
 
-  document.getElementById('next').addEventListener('click', () => {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add('active');
-    closeAllProjectInfos();
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlidePosition();
   });
 
-  document.getElementById('prev').addEventListener('click', () => {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    slides[currentSlide].classList.add('active');
-    closeAllProjectInfos();
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlidePosition();
   });
 
-  // Accordion-Logik mit Animation-Schutz
+  // Optional: Accordion-Logik beibehalten
   const toggles = document.querySelectorAll('.project-toggle');
 
   toggles.forEach(toggle => {
-    let animating = false; // blockiert Klick während Animation
+    let animating = false;
     toggle.addEventListener('click', () => {
-      if (animating) return; // Klick ignorieren während Animation
+      if (animating) return;
 
       const info = toggle.nextElementSibling;
 
       if (info.classList.contains('open')) {
-        // schließen
         animating = true;
-        info.style.height = info.scrollHeight + 'px'; // aktuelle Höhe setzen
-        info.offsetHeight; // Reflow für Animation
+        info.style.height = info.scrollHeight + 'px';
+        info.offsetHeight;
         info.style.height = '0';
         info.classList.remove('open');
         info.setAttribute('aria-hidden', 'true');
@@ -1067,7 +1059,6 @@
           }
         });
       } else {
-        // öffnen
         animating = true;
         info.classList.add('open');
         info.style.height = info.scrollHeight + 'px';
@@ -1076,7 +1067,7 @@
 
         info.addEventListener('transitionend', function handler(e) {
           if (e.propertyName === 'height') {
-            info.style.height = 'auto'; // Höhe zurücksetzen für flexible Größe
+            info.style.height = 'auto';
             animating = false;
             info.removeEventListener('transitionend', handler);
           }
@@ -1084,6 +1075,6 @@
       }
     });
   });
-  </script>
+</script>
 </body>
 </html>

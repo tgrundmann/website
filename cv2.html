@@ -1,1 +1,231 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio – T.-Y. Grundmann</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #333;
+    line-height: 1.5;
+  }
+  header {
+    background: #004080;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+  }
+  header p {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+  }
+  section {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  h2 {
+    color: #004080;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.25rem;
+  }
+  .timeline, .skills, .projects {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .timeline-item, .project-item, .skill-category {
+    background: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+  .timeline-item strong {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .skill-list li {
+    background: #e0f0ff;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  footer {
+    background: #004080;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+  }
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .social-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  .social-links a i {
+    margin-right: 0.25rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>T.-Y. Grundmann</h1>
+  <p>Senior IT-Berater | Data Science | Business Intelligence</p>
+</header>
+
+<section>
+  <h2>Lebenslauf</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <strong>08|2022 – heute</strong>
+      Senior Manager, Allgeier Public SE<br>
+      Öffentlicher Sektor – Asylwesen
+    </div>
+    <div class="timeline-item">
+      <strong>04|2021 – 04|2022</strong>
+      IT-Projektmanager, Asklepios Service IT GmbH<br>
+      Gesundheitswesen
+    </div>
+    <div class="timeline-item">
+      <strong>02|2019 – 03|2021</strong>
+      IT-Berater, Lufthansa Industry Solutions GmbH<br>
+      Logistik | Business Intelligence & Data Science
+    </div>
+    <div class="timeline-item">
+      <strong>10|2016 – 02|2019</strong>
+      Master of Science, Wirtschaftsinformatik, FU Berlin
+    </div>
+    <div class="timeline-item">
+      <strong>10|2011 – 11|2014</strong>
+      Bachelor of Science, Wirtschaftsinformatik, Leuphana Universität Lüneburg
+    </div>
+    <div class="timeline-item">
+      <strong>Zertifizierungen</strong>
+      <ul>
+        <li>PRINCE2® Practitioner (seit 05|2023)</li>
+        <li>PMP® (seit 05|2022)</li>
+        <li>AWS Certified Cloud Practitioner (08|2020)</li>
+        <li>ISTQB® Foundation (04|2016)</li>
+        <li>ITIL® Foundation (03|2016)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Know-how & Skills</h2>
+  <div class="skills">
+    <div class="skill-category">
+      <h3>Top Skills</h3>
+      <ul class="skill-list">
+        <li>Strategische IT-Beratung</li>
+        <li>Projektmanagement</li>
+        <li>Softwareeinführung & -entwicklung</li>
+        <li>Business Intelligence & Data Science</li>
+      </ul>
+    </div>
+    <div class="skill-category">
+      <h3>IT-Projektmanagement</h3>
+      <ul class="skill-list">
+        <li>PRINCE2</li>
+        <li>PMP</li>
+        <li>Scrum</li>
+        <li>Kanban</li>
+        <li>MS Office / Project / Teams</li>
+      </ul>
+    </div>
+    <div class="skill-category">
+      <h3>KI & Analytics</h3>
+      <ul class="skill-list">
+        <li>Pandas</li>
+        <li>NumPy</li>
+        <li>Scikit-learn</li>
+        <li>TensorFlow</li>
+        <li>PyTorch</li>
+        <li>ELK Stack</li>
+        <li>LSTM Modelle</li>
+      </ul>
+    </div>
+    <div class="skill-category">
+      <h3>BI & SAP</h3>
+      <ul class="skill-list">
+        <li>Power BI</li>
+        <li>Qlik</li>
+        <li>SAP Analytics Cloud</li>
+        <li>SAP BW / ERP</li>
+        <li>Tableau</li>
+      </ul>
+    </div>
+    <div class="skill-category">
+      <h3>Cloud & Infrastruktur</h3>
+      <ul class="skill-list">
+        <li>AWS (S3, SageMaker, Lambda)</li>
+        <li>MS Azure</li>
+        <li>Google Cloud</li>
+        <li>SAP Cloud Platform</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Projekte (Auswahl)</h2>
+  <div class="projects">
+    <div class="project-item">
+      <strong>ALDI Nord – Log-Monitoring & Prozessanalyse</strong><br>
+      Skalierbare IT-Architektur zur Analyse von Log-Daten, automatisiertes Reporting und Fehlererkennung.
+    </div>
+    <div class="project-item">
+      <strong>Wrede Consulting – Lackmessungen</strong><br>
+      BI- & Analytics-Plattform zur digitalen Auswertung von Lackmessungen an Megayachten.
+    </div>
+    <div class="project-item">
+      <strong>Lufthansa Technik – BI-Tool Evaluation</strong><br>
+      Konzernweite Evaluierung und Proof-of-Concept für Business Intelligence Tools.
+    </div>
+    <div class="project-item">
+      <strong>HOCHBAHN – Sensordatenanalyse</strong><br>
+      Vorhersagemodell für Tür-Fehlerereignisse in U-Bahnen, Predictive Maintenance.
+    </div>
+    <div class="project-item">
+      <strong>Asklepios – eHealth Lösung samedi</strong><br>
+      Deutschlandweiter Rollout des Terminmanagement-Systems inkl. Schnittstellenmanagement.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="social-links">
+    <a href="https://www.xing.to/Tim-Yannick_Grundmann" target="_blank"><i class="fab fa-xing"></i> Xing</a>
+    <a href="https://www.linkedin.com/in/t-grundmann" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+  </div>
+  <p>&copy; 2025 T.-Y. Grundmann. Alle Rechte vorbehalten.</p>
+</footer>
+
+</body>
+</html>
 

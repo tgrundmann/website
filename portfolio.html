@@ -6,6 +6,9 @@
 <title>Portfolio – T.-Y. Grundmann</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     font-family: 'Inter', sans-serif;
     margin: 0;
@@ -15,6 +18,9 @@
     line-height: 1.5;
   }
   header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     background: #555;
     color: #fff;
     padding: 2rem 1rem;
@@ -27,6 +33,22 @@
   header p {
     font-size: 1.1rem;
     margin-top: 0.5rem;
+  }
+  .header-nav {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .header-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    opacity: 0.85;
+  }
+  .header-nav a:hover {
+    opacity: 1;
+    text-decoration: underline;
   }
   section {
     max-width: 1000px;
@@ -106,8 +128,14 @@
 <header>
   <h1>Tim-Yannick Grundmann</h1>
   <p>IT-Beratung | Programm- & Projektmanagement | Softwareeinführung & -entwicklung | BI, KI & Data Science</p>
+  <nav class="header-nav">
+    <a href="#profil">Homepage</a>
+    <a href="#skills">Skills</a>
+    <a href="#projekte">Projekte</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
 </header>
-
+  
 <section>
   <h2>Lebenslauf</h2>
   <div class="timeline">
@@ -185,7 +213,7 @@
   </div>
 </section>
 
-<section>
+<section id="skills">
   <h2>Know-how & Skills</h2>
   <div class="skills">
     <div class="skill-category">
@@ -471,7 +499,7 @@
   </div>
 </section>
 
-<section>
+<section id="projekte">
   <h2>Beratungsprojekte</h2>
   <div class="projects">
     <div class="project-item">

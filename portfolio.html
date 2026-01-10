@@ -102,6 +102,28 @@
     max-width: 700px;
     margin: 0 auto;
   }
+  .hero-profile {
+   list-style: none;
+   padding: 0;
+   margin: 1.5rem auto 0;
+   max-width: 800px;
+   text-align: left;
+  }
+  .hero-profile li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.6rem;
+    font-size: 1.05rem;
+    color: #444;
+  }
+  .hero-profile li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #0077b5;
+    font-size: 1.2rem;
+    line-height: 1;
+  }
   section {
     max-width: 1000px;
     margin: 2rem auto;
@@ -217,6 +239,14 @@
    <p class="hero-subline">
     Ich übernehme Verantwortung für komplexe Projekte – von der Strategie bis zur erfolgreichen Umsetzung.
    </p>
+    <ul class="hero-profile">
+    <li>10+ Jahre Erfahrung in komplexen IT- & Digitalisierungsprojekten</li>
+    <li>
+      Fokus: Programm-/Projektmanagement | BI, KI & Analytics |
+      Softwareentwicklung
+    </li>
+    <li>Schnittstelle zwischen Fachbereich, IT & Management</li>
+  </ul>
 </section>
   
 <section id="cv">

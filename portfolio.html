@@ -91,6 +91,17 @@
     object-fit: cover;   /* Bild proportional zuschneiden */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* optional: leichter Schatten */
   }
+  .hero-claim {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .hero-subline {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+  }
   section {
     max-width: 1000px;
     margin: 2rem auto;
@@ -199,8 +210,13 @@
 
 <section class="hero" id="ueber">
    <h1>Tim-Yannick<br>Grundmann</h1>
-   <img src="profilbild.jpg" alt="Profilbild Tim-Yannick Grundmann" class="profilbild" />
-   <p>Strategischer Partner<br>für<br>Digitalisierungsvorhaben</p>
+   <img src="profilbild.jpg" alt="Profilbild Tim-Yannick Grundmann" class="profilbild"/>
+   <p class="hero-claim">
+    Strategischer Partner für Digitalisierungsvorhaben.
+   </p>
+   <p class="hero-subline">
+    Ich übernehme Verantwortung für komplexe Projekte – von der Strategie bis zur erfolgreichen Umsetzung.
+   </p>
 </section>
   
 <section id="cv">
@@ -330,7 +346,6 @@
       <ul class="skill-list">
         <li>Datenanalyse</li>
         <li>Text-/Dokumentenanalyse (NLP)</li>
-        <li>Datenanalyse</li>
         <li>Fehlererkennung</li>
         <li>Anomalieerkennung</li>
         <li>Betrugserkennung</li>

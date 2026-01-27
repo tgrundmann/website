@@ -175,6 +175,32 @@
     font-size: 0.9rem;
     font-weight: 700;
   }
+  .toggle-project {
+    background: #0077b5;
+    color: #fff;
+    border: none;
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0.5rem 0 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .toggle-project i {
+    transition: transform 0.25s ease;
+  }
+  .toggle-project.open i {
+    transform: rotate(180deg);
+  }
+  .project-item .skill-list {
+    display: none;
+  }
+  .project-item.open .skill-list {
+    display: flex;
+  }
   .social-links { 
     margin-top: 2rem;
     text-align: center;
@@ -218,6 +244,7 @@
   }
 </style>
 </head>
+ 
 <body>
 
 <header>
@@ -450,6 +477,10 @@
       <br>
       Strategische IT-Beratung, Wirtschaftlichkeitsbetrachtung und Umsetzungsempfehlung für die Nutzung einer zertifizierten Scan-Straße im Landesamt für Zuwanderung und Flüchtlinge Schleswig-Holstein.<br>
       <br>
+      <button class="toggle-project">
+       <span>Skills anzeigen</span>
+       <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Öffenlticher Sektor</li>
         <li>Asylwesen</li>
@@ -467,6 +498,10 @@
       <br>
       Strategische IT-Beratung, Marktanalyse, Business Case und Umsetzungsempfehlung für die Ablösung des PIK-Systems beim Landesamt für Zuwanderung und Flüchtlinge Schleswig-Holstein.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Öffenlticher Sektor</li>
         <li>Asylwesen</li>
@@ -492,6 +527,10 @@
       <br>
       Konzeption einer datengetriebenen Analyse von POS-Daten zur Identifikation von Kaufmustern, Kundensegmenten und Cross-Selling-Potenzialen mithilfe von Apriori und Clustering-Verfahren.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Data Science</li>
         <li>explorative Datenanalyse</li>
@@ -512,6 +551,10 @@
       <br>
       Konzeption einer skalierbaren IT-Architektur zur automatisierten Analyse von Kassensystem- und Prozesslogs zur Fehlererkennung und Prozessoptimierung.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Data Science</li>
         <li>Architekturkonzept</li>
@@ -542,6 +585,10 @@
       <br>
       Aufbau einer BI- und Analytics-Plattform zur digitalen Auswertung von Lackmessungen an Megayachten inklusive Datenbank, ETL-Prozessen und interaktiven Power-BI-Dashboards.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Logistik</li>
         <li>Python</li>
@@ -557,6 +604,10 @@
       <br>
       Cloud-basierte Analyseplattform zur Auswertung von Sensordaten aus U-Bahnen mit LSTM-Modell für Predictive Maintenance und frühzeitige Fehlererkennung.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Logistik</li>
         <li>Amazon Web Services (AWS)</li>
@@ -578,6 +629,10 @@
       <br>
       Strategische Evaluierung führender BI-Tools inklusive PoC, Kosten-Nutzen-Analyse und Entscheidungsvorlage zur konzernweiten BI-Einführung bei Lufthansa Technik. Organisation von Testumgebungen sowie Schulungen.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Logistik</li>
         <li>Business Intelligence</li>
@@ -599,6 +654,10 @@
       <br>
       Projektmanagement zur Einführung von dDocuScan der Dataport für eine zertifizierte Scan-Straße im Landesamt für Zuwanderung und Flüchtlinge Schleswig-Holstein.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Öffenlticher Sektor</li>
         <li>Asylwesen</li>
@@ -617,6 +676,10 @@
       <br>
       Projektmanagement zur Einführung der elektronischen Ausländerakte im Landesamt für Zuwanderung und Flüchtlinge Schleswig-Holstein.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Öffenlticher Sektor</li>
         <li>Asylwesen</li>
@@ -633,6 +696,10 @@
       <br>
       Projektleitung zur Bereitstellung und Einführug der Java-Webanwendung PAULA bei der Dataport als zentrales Fachverfahren und PIK-Nachfolgelösung für das Landesamt für Zuwanderung und Flüchtlinge Schleswig-Holstein.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Öffenlticher Sektor</li>
         <li>Asylwesen</li>
@@ -664,6 +731,10 @@
       <br>
       Projektmanager für den deutschlandweiten Konzern-Rollout der eHealth-Lösung samedi zur Planung von Terminen und der Videosprechstunde inkl. Schnittstellenmanagement.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Gesundheitswesen</li>
         <li>eHealth</li>
@@ -689,6 +760,10 @@
       <br>
       Konzeption und Umsetzung des Berichtswesen für die SAC.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Logistik</li>
         <li>Business Intelligence</li>
@@ -704,7 +779,11 @@
       <br>
       Unterstützung des Projektmanagements zur Einführung der SAC als BI-Tool. Erstellung und Umsetzung eines Betriebskonzepts sowie eines Benutzer- und Berechtigungskonzepts. Anbindung von Datenquellen.<br>
       <br>
-       <ul class="skill-list">
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
+      <ul class="skill-list">
         <li>Logistik</li>
         <li>Business Intelligence</li>
         <li>ABAP</li>
@@ -713,13 +792,17 @@
         <li>SAP ERP</li>
         <li>SAP BPC</li>
         <li>MS Office</li>
-       </ul>
+      </ul>
     </div>
     <div class="project-item">
       <strong>#1 Daimler – Phoenix</strong><br>
       <br>
       Unterstützung des agilen Projektmanagements zur Einführung einer prädiktiven Webanwednung für die optimale Preisfindung von Geschäftsfahrzeugen.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Automobilindustrie</li>
         <li>Data Analytics</li>
@@ -741,6 +824,10 @@
       <br>
       Entwicklung und Evaluierung einer dezentralen, blockchain-basierten Frachtenbörse zur Reduzierung von Leerfahrten, Steigerung der LKW-Auslastung und Senkung von CO₂-Emissionen im Rahmen eines geförderten Innovationsprojekts.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Logistik</li>
         <li>Blockchain</li>
@@ -774,6 +861,10 @@
       <br>
       Entwicklung eines Process-Mining-Modells zur Simulation, Analyse und Optimierung von Logistikprozessen zur Abbildung eines digitalen Zwillings. Berechnung der Zeitperformance sowie der Häufigkeiten für Resourcen und Aktivitäten.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Logistik</li>
         <li>Open Source</li>
@@ -806,6 +897,10 @@
       <br>
       Entwicklung eines Datenmodells zur optimierten Stauplanung für den Güterverkehr.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Data Science</li>
         <li>Operations Research</li>
@@ -820,6 +915,10 @@
       <br>
       Abschlussarbeit an der FU Berlin zur Entwicklung eines Datenmodells mittels Text-Mining Methoden für die optimierte Beratung von Bankkunden.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Banking</li>
         <li>Data Science</li>
@@ -849,6 +948,10 @@
       <br>
       Entwicklung einer cloudbasierten Architektur in MS Azure zur Datenanalyse und Entscheidungsunterstützung in Echtzeit.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Data Science</li>
         <li>JupyterLab</li>
@@ -874,6 +977,10 @@
       <br>
       Studienarbeit an der FU Berlin in Kooperation eines Versandhändlers zur Entwicklung eines Datenmodells für die Vorhersage des CLV eines Kunden. Marktrecherche, Konzepterstellung und Prototypentwicklung.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Data Science</li>
         <li>CRISP-DM</li>
@@ -903,6 +1010,10 @@
       <br>
       Studienarbeit an der FU Berlin zur Entwicklung einer Web-Anwendung für die Analyse der US-Wahl. Modellierung des ER-Modells. Erstellung der Datenbank und Konfiguration des Webservers. Überführung des Datenmodells in die Datenbank. Durchführung des Datenimports, der -bereinigung und der -visualisierung.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Data Science</li>
         <li>explorative Datenanalyse</li>
@@ -931,6 +1042,10 @@
       <br>
       Studienarbeit an der FU Berlin zur Entwicklung eines Datenmodells für die Vorhersage der Kundenzufriedenheit von Bankkunden.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Data Science</li>
         <li>CRISP-DM</li>
@@ -948,6 +1063,10 @@
       <br>
       Studienarbeit an der Leuphana Universität Lüneburg zur Funktionsanalyse und Verbesserung des Online-Portals Infogate des Containerterminals Eurogate. Verantwortlich für das Anforderungsmanagement. Erstellung eines Fachkonzepts zur Optimierung bestehender Prozesse.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Logistik</li>
         <li>Stakeholderanalyse</li>
@@ -966,6 +1085,10 @@
       <br>
       Weiterentwicklung der Java-Webanwendung im Zuge einer Länderkooperation. Verantwortlich für das Anforderungs-, Test und Incident Management. Hybride Softwareentwicklung. Organisation und Aufbau des fachlichen Verfahrensmanagements. Erstellung von Fachkonzepten. Bereitstellung von Datenexporten. Weiterentwicklung und Organisation der Anbindung von Schnittstellen.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Öffenlticher Sektor</li>
         <li>Asylwesen</li>
@@ -990,6 +1113,10 @@
       <br>
       Support und Wartung der R-Shiny-Webanwendung. Verantwortlich für das Incident Management. Agile Softwareentwicklung. Bereitstellung von Datenexporten. Durchführung von Monitoring, Fehleranalysen und -bereinigungen.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Logistik</li>
         <li>Linux Server</li>
@@ -1015,6 +1142,10 @@
       <br>
       Weiterentwicklung der Java-Webanwendung. Verantwortlich für das Anforderungs- und Test Management mit dem Fokus Stammdatenmanagement (Master Data Management - MDM). Softwareentwicklung nach klassischem Wasserfallmodell. Erstellung von Fachkonzepten.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Logistik</li>
         <li>MS Office</li>
@@ -1031,6 +1162,10 @@
       <br>
       Support, Wartung und Weiterentwicklung der Java-Webanwendung. Verantwortlich für das Anforderungs-, Test und Incident Management. Softwareentwicklung nach klassischem Wasserfallmodell. Erstellung von Fachkonzepten.<br>
       <br>
+      <button class="toggle-project" aria-expanded="false">
+        <span>Skills anzeigen</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="skill-list">
         <li>Logistik</li>
         <li>Windows Server</li>
@@ -1071,6 +1206,30 @@
 <footer class="copyright-footer">
  <p>&copy; 2025 T.-Y. Grundmann. Alle Rechte vorbehalten.</p>
 </footer>
+
+ <script>
+ document.addEventListener("DOMContentLoaded", () => {
+   document.querySelectorAll(".toggle-project").forEach(button => {
+     button.addEventListener("click", () => {
+       const project = button.closest(".project-item");
+       const label = button.querySelector("span");
+       const isOpen = project.classList.toggle("open");
+       button.classList.toggle("open", isOpen);
+       button.setAttribute("aria-expanded", isOpen);
+       label.textContent = isOpen ? "Skills ausblenden" : "Skills anzeigen";
+     });
+   });
+  document.querySelectorAll(".projects").forEach(section => {
+    const project = section.querySelector(".project-item");
+    if (!project) return;
+    const button = project.querySelector(".toggle-project");
+    const label = button.querySelector("span");
+    project.classList.add("open");
+    button.classList.add("open");
+    label.textContent = "Skills ausblenden";
+  });
+ });
+</script>
 
 </body>
 </html>

@@ -1216,7 +1216,7 @@
        const isOpen = project.classList.toggle("open");
        button.classList.toggle("open", isOpen);
        button.setAttribute("aria-expanded", isOpen);
-       label.textContent = isOpen ? "Skills ausblenden" : "Skills anzeigen";
+       label.textContent = isOpen ? "Skills & Tools ausblenden" : "Skills & Tools anzeigen";
      });
    });
   document.querySelectorAll(".projects").forEach(section => {
@@ -1226,7 +1226,7 @@
     const label = button.querySelector("span");
     project.classList.add("open");
     button.classList.add("open");
-    label.textContent = "Skills ausblenden";
+    label.textContent = "Skills & Tools ausblenden";
   });
  });
 </script>
